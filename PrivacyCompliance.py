@@ -1,6 +1,4 @@
-class user:
-    def __init__(self, prompt):
-        self.prompt = prompt
+from user import user
         
 def chatbot():
 
@@ -14,9 +12,12 @@ def chatbot():
 
         global birthYear
             
-        birthYearStr = input("Year of birth: ")
-
-        birthYear = int(birthYearStr)
+        while True:
+            try:
+                birthYear = int(input("Year of birth: "))
+                break
+            except:
+                print("Please enter a valid year of birth in YYYY format.")
     
         if 1899 < birthYear < 1946:
             print("You are Pre-war Generation.")
